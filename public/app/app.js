@@ -7,6 +7,5 @@ app.config(function($routeProvider, $locationProvider){
 });
 
 app.controller('mainController', function($scope) {
-    $scope.myVar = "Hello Angular";
+    $scope.myVar = "This is my var";
 });
-
