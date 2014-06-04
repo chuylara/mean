@@ -6,6 +6,3 @@ app.config(function($routeProvider, $locationProvider){
         when('/', { templateUrl: '/partials/main', controller: 'mainController'} );
 });
 
-app.controller('mainController', function($scope) {
-    $scope.myVar = "This is my var";
-});
