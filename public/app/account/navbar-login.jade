@@ -1,7 +1,15 @@
 .navbar-right(ng-controller="navBarLoginCtrl")
-    form.navbar-form
+    form.navbar-form(ng-hide="identityService.isAuthenticated()")
         .form-group
             input.form-control(plaeholder="Email", ng-model="username")
         .form-group
             input.form-control(type="password" placeholder="Password", ng-model="password")
         button.btn.btn-primary(ng-click="signin(username, password)") Sign In
+    ul.nav.navbar-nav.navbar-right(ng-show="identityService.isAuthenticated()")
+        li.dropdown
+            a.dropdown-toggle(href="", data-toggle="dropdown")
+                | {{ identityService.currentUser.firstName + " " + identityService.currentUser.lastName }}
+                b.caret
+            ul.dropdown-menu
+                li
+                    a(href="", ng-click="signout()") Sign Out

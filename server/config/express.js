@@ -3,9 +3,10 @@ var express  = require('express'),
     morgan = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
-    session = require('express-session');
+    session = require('express-session'),
+    passport = require('passport');
 
-module.exports = function(app, passport, config) {
+module.exports = function(app, config) {
 
     function compile(str, path){
         return stylus(str).set('filename', path);
